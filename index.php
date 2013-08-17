@@ -2,10 +2,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Bootstrap Template</title>
+    <title>Who Are You?</title>
     <meta charset="utf-8">
-    <meta name="copyright" content="Psyop 2013">
-    <meta name="author"    content="pipeline@psyop.tv">
+    <meta name="author"    content="Jennifer Dalton">
     <meta name="viewport"  content="width=device-width, initial-scale=1.0">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
@@ -54,54 +53,21 @@
     </style>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="brand" href="http://info.psyop.tv/">Psyop</a>
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="divider-vertical"></li>
-                        <li><a href="http://example.com/">Lions</a></li>
-                        <li><a href="http://example.com/">Tigers</a></li>
-                        <li><a href="http://example.com/">Bears</a></li>
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown" id="menu1">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <b class="caret"></b></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="http://example.com/">one</a></li>
-                                <li><a href="http://example.com/">two</a></li>
-                                <li class="divider"></li>
-                                <li><a href="http://example.com/">three</a></li>
-                            </ul>
-                        </li>
-                    </ul><!-- /.nav -->
-                </div><!-- /.nav-collapse -->
-            </div><!-- /.container -->
-        </div><!-- /.navbar-inner -->
-    </div><!-- /.navbar .navbar-fixed-top -->
-
-
+    <?php include 'nav.php';?>
     <div class="row">
         <div class="offset1 span10">
-
-
             <div class="controls">
                 <?php foreach ($things as $name => $label): ?>
                 <p class="control">
                     <label>
-                        <input type="range" class="axis-control" id="<?=$name?>-control" name="<?=$name?>-control" value="5" min="1" max="10" step="1">
+                        <input type="range" class="axis-control input-xxlarge id="<?=$name?>-control" name="<?=$name?>-control" value="5" min="1" max="10" step="1">
                         <output for="<?=$name?>-control" onforminput="value = <?=$name?>-control.valueAsNumber;"></output>
                     </label>
                 </p>
                 <?php endforeach; ?>
             </div>
 
-            <canvas id="frame" width="800" height="800"></canvas >
+            <canvas id="frame" width="600" height="600"></canvas >
 
             <button id="dl" class="btn btn-large btn-primary" type="button">Download</button>
         </div>
@@ -113,46 +79,45 @@
     <script type="text/javascript">
     $(function() {
         var canvas = new fabric.Canvas('frame');
-        var texts = [
-             ['hello' , 'gbye']
-            ,['howdy' , 'cya'  ]
-            ,['ohai'  , 'later']
-            ,['hey'   , 'buhbye']
-            ,['greet' , 'ciao']
-            ,['wassup', 'catch ya']
-        ];
+        var texts = <?= json_encode($things); ?>
+
+        var label = 100;
+        var pad   = 5;
+        var h = $('#frame').height();
+        var w = $('#frame').width();
+
         var Lconfig = {
                 fontSize: 15,
-                left: 100,
-                top:  300,
+                left: label,
+                top:  h/2,
                 originX:'right',
                 originY:'center'
         }
         var Rconfig = {
                 fontSize: 15,
-                left:400,
-                top: 300,
+                left:w-label,
+                top: h/2,
                 originX:'left',
                 originY:'center'
         }
         $.each(texts, function(i, pair) {
-            var L = new fabric.Text(pair[0], Lconfig);
-            var R = new fabric.Text(pair[1], Rconfig);
+            var Left  = new fabric.Text(pair.left,  Lconfig);
+            var Right = new fabric.Text(pair.right, Rconfig);
             var angle = i * (180/texts.length) - 90;
-            var C = new fabric.Line([105, 300, 395, 300], {
-                fill: 'black',
-                stroke: 'black',
+            var Line = new fabric.Line([0+pad+label, h/2, w-pad-label, h/2], {
+                fill:   pair.color,
+                stroke: pair.color,
                 strokeWidth: 1,
                 angle : angle,
-                selectable: false
+                selectable: true
             });
 
-            var group = new fabric.Group([L, R], {
+            var group = new fabric.Group([Left, Right], {
                 angle: angle,
-                selectable: false
+                selectable: true
             })
 
-            canvas.add(C)
+            canvas.add(Line)
             canvas.add(group)
         })
 
