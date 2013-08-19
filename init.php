@@ -21,12 +21,19 @@ class Axis
 
 function getAxes() {
     $lines = @file('axes.txt');
+
+    $digits = array('0','3','6','9','c','f');
+
     $axes = array();
     foreach ($lines as $line) {
         list($left, $right) = explode("\t", $line);
+        $left = trim($left);
+        $right = trim($right);
+
+        $hex = '#'.$digits[mt_rand(0,5)].$digits[mt_rand(0,5)].$digits[mt_rand(0,5)];
 
         if ($left && $right) {
-            $axes[] = Axis::create($left, $right, 'blue');
+            $axes[] = Axis::create($left, $right, $hex);
         }
     }
     return $axes;

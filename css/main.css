@@ -1,8 +1,6 @@
 body {
-  /*Felipa|Reenie+Beanie|Alex+Brush*/
-
   font-size:20px;
-  padding-top: 50px; /* 50px to make the container go all the way to the bottom of the topbar */
+  padding-top: 80px; /* Get the content from under the navbar. */
 }
 #frame {
   box-shadow: 1px 1px 1px  rgba(0,0,0,.3);
@@ -43,13 +41,16 @@ output:after {
   margin-left: -5px;
   margin-top: -1px;
 }
+#controls tr {
+  height:50px;
+}
 #controls td,
 #controls th {
   border:none;
   vertical-align:baseline;
 }
-.axis-control {
-  font-size:.5em;
+.axis-value {
+  font-size:.75em;
   width:100%;
 }
 .axis-label {
@@ -61,4 +62,12 @@ output:after {
 .axis-label.right {
   text-align: left;
 }
+.qtip-custom {
+  min-width: 20px;
+}
+.qtip-custom .qtip-content {
+  text-align: center;
+  width: auto;
+}
+
 
