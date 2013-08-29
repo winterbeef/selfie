@@ -54,6 +54,7 @@ output:after {
   width:100%;
 }
 .axis-label {
+  cursor:pointer;
   width: 220px;
 }
 .axis-label.left {

@@ -22,7 +22,7 @@
               <?php foreach (getAxes() as $idx => $axis): ?>
               <tr class="axis">
                 <td class="axis-label left"><?=$axis->left?></td>
-                <td>
+                <td class="axis-slider">
                     <div class="axis-value" data-value="5">5</div>
                 </td>
                 <td class="axis-label right"><?=$axis->right?></td>
