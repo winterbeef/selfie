@@ -56,6 +56,11 @@ output:after {
 .axis-label {
   cursor:pointer;
   width: 220px;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  -o-user-select: none;
+  user-select: none;
 }
 .axis-label.left {
   text-align: right;

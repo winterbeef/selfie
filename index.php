@@ -18,7 +18,21 @@
     <div class="row">
       <div class="span12">
           <div class="controls">
+
+
+
               <table id="controls" class="table">
+
+              <thead>
+              <tr>
+                <td></td>
+                <td>
+                    <button class="showme btn btn-large btn-block btn-primary" type="button">Who Am I?</button>
+                </td>
+                <td></td>
+              </tr>
+              </thead>
+
               <?php foreach (getAxes() as $idx => $axis): ?>
               <tr class="axis">
                 <td class="axis-label left"><?=$axis->left?></td>
@@ -28,7 +42,21 @@
                 <td class="axis-label right"><?=$axis->right?></td>
               </tr>
               <?php endforeach; ?>
+
+              <tfoot>
+              <tr>
+                <td></td>
+                <td>
+                    <button class="showme btn btn-large btn-block btn-primary" type="button">Who Am I?</button>
+                </td>
+                <td></td>
+              </tr>
+              </tfoot>
+
               </table>
+
+
+
           </div><!-- /.controls -->
       </div><!-- /.span12 -->
     </div><!-- /.row -->
