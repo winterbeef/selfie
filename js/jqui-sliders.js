@@ -1,8 +1,7 @@
 $(function() {
 
 	function setTipVal(handle, newVal) {
-		var api = $(handle).qtip('api');
-		api.set('content.text', newVal);
+		 $(handle).qtip('option', 'content.text', ''+newVal);
 	}
 
 	function qtipDefault(handle, value) {
@@ -57,12 +56,11 @@ $(function() {
 		label = $(event.target);
 		xv = $(event.delegateTarget).find('.axis-value');
 		widget = xv.slider('widget');
-		handle = xv.find('.ui-slider-handle');
 
 		newVal = widget.slider('value') + (label.hasClass('left') ? -1 : +1);
+		newVal = Math.max(0, Math.min(10, newVal));
 		widget.slider('value', newVal);
-		makeQtipFromXv(xv, newVal);
-		// handle.qtip(qtipDefault(handle, newVal))
+		makeQtipFromXv(xv, newVal)
 	})
 
 
