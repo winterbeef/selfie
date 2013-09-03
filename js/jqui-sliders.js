@@ -69,8 +69,7 @@ $(function() {
 		for(var i=0; i<32; i++) {
 			vals[vals.length] = $($('.axis-value')[i]).slider('value');
 		}
-		console.log(vals.join(','));
-		window.location = 'canvas.php?me='+vals.join(',')
+		window.location = 'render/'+vals.join(',')
 	})
 
 })

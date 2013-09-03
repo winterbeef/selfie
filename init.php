@@ -38,3 +38,7 @@ function getAxes() {
     }
     return $axes;
 }
+
+function getMe($v) {
+    return explode(',', $v);
+}

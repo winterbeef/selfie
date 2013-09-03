@@ -8,9 +8,9 @@
   <meta name="viewport"  content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-<!--   <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="/whoami/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/whoami/css/main.css">
+<!--   <link rel="stylesheet" type="text/css" href="/whoami/css/bootstrap-responsive.min.css"> -->
 </head>
 <body>
   <?php include 'nav.php';?>
@@ -65,10 +65,10 @@
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap-min.js"></script>
-  <script type="text/javascript" src="js/fabric-custom.js"></script>
-  <script type="text/javascript" src="js/data.php"></script>
-  <script type="text/javascript" src="js/jqui-sliders.js"></script>
+  <script type="text/javascript" src="/whoami/js/bootstrap-min.js"></script>
+  <script type="text/javascript" src="/whoami/js/fabric-custom.js"></script>
+  <script type="text/javascript" src="/whoami/js/data.php"></script>
+  <script type="text/javascript" src="/whoami/js/jqui-sliders.js"></script>
 </body>
 </html>
 

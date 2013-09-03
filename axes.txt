@@ -1,32 +1,32 @@
 gay	straight
 omnivore	vegan
-dirty	clean
+slob	tidy
 adventurous	fearful
-disorganized	organized
+can't find keys	can find keys
 idiot	asshole
 grateful	bitter
 accommodating	control freak
 aggressive/aggressive	passive/aggressive
 generous	demanding
 easy to please	persnickety
-get angry	get sad
-don't give a shit	give a shit
+get angry	 get sad
+don't give a shit	gives too many shits
 accepting	judgy
-exempt from the rules	play by the rules
-flexible	stubborn
+exempt from the rules	obeys rules
+malleable	stubborn
 submissive	dominant
 liberal	conservative
 craves authority	fights authority
 country	city
 generous	withholding
 minimize moneymaking potential	maximize moneymaking potential
-satisfied	not satisfied
+meek	obnoxious
 feel like a success	feel like a failure
-doesnt' care what people think	care what people think
+doesn't care what people think	seeks approval
 someone else'll do it	I'll do it
 entitled	guilty
 feel rich	feel poor
 luxury	artisanal
-spendy	frugal
+extravagant	frugal
 loser	pig
 fun before work	work before fun
