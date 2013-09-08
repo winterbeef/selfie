@@ -1,32 +1,32 @@
-gay	straight
-omnivore	vegan
-slob	tidy
-adventurous	fearful
-can't find keys	can find keys
-idiot	asshole
-grateful	bitter
-accommodating	control freak
-aggressive/aggressive	passive/aggressive
-generous	demanding
-easy to please	persnickety
-get angry	 get sad
-don't give a shit	gives too many shits
-accepting	judgy
-exempt from the rules	obeys rules
-malleable	stubborn
-submissive	dominant
-liberal	conservative
-craves authority	fights authority
-country	city
-generous	withholding
-minimize moneymaking potential	maximize moneymaking potential
-meek	obnoxious
-feel like a success	feel like a failure
-doesn't care what people think	seeks approval
-someone else'll do it	I'll do it
-entitled	guilty
-feel rich	feel poor
-luxury	artisanal
-extravagant	frugal
-loser	pig
-fun before work	work before fun
+gay	straight	F4BFD1
+omnivore	vegan	F46BAF
+slob	tidy	F43FA5
+adventurous	fearful	E0219E
+can't find keys	can find keys	c4008c
+idiot	asshole	A3057F
+grateful	bitter	AF23A5
+accommodating	control freak	AA47BA
+aggressive/aggressive	passive/aggressive	70147A
+generous	demanding	66008C
+easy to please	persnickety	59118E
+get angry	 get sad	56008C
+don't give a shit	gives too many shits	3F0077
+accepting	judgy	332875
+exempt from the rules	obeys rules	1E1C77
+malleable	stubborn	0038A8
+submissive 	dominant	0051BA
+liberal 	conservative	0054A0
+craves authority	fights authority	0072C6
+country	city	00A3DD
+generous	withholding	60AFDD
+minimize moneymaking potential	maximize moneymaking potential	82C6E2
+meek	obnoxious	93C6E0
+feel like a success	feel like a failure	51BFE2
+doesn't care what people think	seeks approval	00BCE2
+someone else'll do it	I'll do it	28C4D8
+entitled	guilty	00B7C6
+feel rich	feel poor	00B2AA
+luxury	artisanal	00997C
+extravagant	frugal	00C993
+loser	pig	1EB53A
+fun before work 	work before fun	009E60

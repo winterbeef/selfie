@@ -26,11 +26,11 @@ function getAxes() {
 
     $axes = array();
     foreach ($lines as $line) {
-        list($left, $right) = explode("\t", $line);
+        list($left, $right, $hex) = explode("\t", $line);
         $left = trim($left);
         $right = trim($right);
-
-        $hex = '#'.$digits[mt_rand(0,5)].$digits[mt_rand(0,5)].$digits[mt_rand(0,5)];
+        $hex = trim($hex);
+        $hex = '#'.$hex;
 
         if ($left && $right) {
             $axes[] = Axis::create($left, $right, $hex);
