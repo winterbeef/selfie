@@ -3,7 +3,7 @@ body {
   padding-top: 80px; /* Get the content from under the navbar. */
 }
 #frame {
-  box-shadow: 1px 1px 1px  rgba(0,0,0,.3);
+  /*box-shadow: 1px 1px 1px  rgba(0,0,0,.3);*/
   border: 1px solid #999;
 }
 .control {
