@@ -14,17 +14,13 @@
 </head>
 <body>
   <?php include 'nav.php';?>
+
+  <canvas id="frame" width="1200" height="1200"></canvas>
+
   <div class="container">
     <div class="row">
       <div class="span12">
-        <pre>
-        <?php
-        echo join('; ',getMe($_GET['me']));
-        ?>
-        </pre>
-      </div><!-- /.span12 -->
-      <div class="span12">
-        <canvas id="frame" width="1000" height="1000"></canvas>
+
         <br>
       </div><!-- /.span12 -->
       <div class="span12">
@@ -54,7 +50,7 @@
         var me = <?= json_encode(getMe($_GET['me'])); ?>
 
         var image = 200;                   // Width of label image.
-        var label = 240;                   // Width reserved for label. Image
+        var label = 340;                   // Width reserved for label. Image
                                            // must be smaller than this.
         var pad   = 0;                     // Between label and line
         var h = $('#frame').height();      // Extent of canvas
@@ -64,7 +60,7 @@
 
         var params = {
           stroke     : 'black',
-          strokeWidth: 1,
+          strokeWidth: 2,
           selectable: false
         }
 
@@ -79,12 +75,12 @@
             var angle = i * theta -90;
             params.stroke = axis.color;
 
-            var score = me[i] - 5;
+            var scale = lineWidth * (me[i] - 5)/13;
             var line = new fabric.Line([0+pad+label, h/2, w-pad-label, h/2], params);
             var radians = (Math.PI * (angle) / 180);
 
-            var deltaV = (lineWidth/10 * score * -Math.sin(radians))
-            var deltaH = (lineWidth/10 * score * Math.cos(radians))
+            var deltaV = (scale * -Math.sin(radians))
+            var deltaH = (scale *  Math.cos(radians))
 
             var imageL = images[Math.floor(i*2+0)];
             var imageR = images[Math.floor(i*2+1)];
@@ -101,7 +97,10 @@
             group.set('left', w/2-deltaH)
             canvas.add(group)
         })
-
+        fabric.Image.fromURL('http://wellingtonfan.com/whoami/images/me.png', function(oImg) {
+          oImg.set('top', h/2).set('left', w/2);
+          canvas.add(oImg);
+        });
         $('#dl').click(function(e){
             window.open(canvas.toDataURL({format:'png'}))
         })
