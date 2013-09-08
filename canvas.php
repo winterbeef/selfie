@@ -47,6 +47,7 @@
     <script type="text/javascript">
     $(window).load(function() {
         var canvas = new fabric.Canvas('frame');
+        canvas.backgroundColor = '#ffffff';
 
         var axes = <?= json_encode(getAxes()); ?>
 
@@ -59,6 +60,7 @@
         var h = $('#frame').height();      // Extent of canvas
         var w = $('#frame').width();       // Extent of canvas
         var theta = (180.0/axes.length);   // Angle of each wedge
+        var lineWidth = w - 2 * (pad+label)
 
         var params = {
           stroke     : 'black',
@@ -74,38 +76,31 @@
         })
 
         $.each(axes, function(i, axis) {
-            var angle = i * theta - 90;
+            var angle = i * theta -90;
             params.stroke = axis.color;
 
+            var score = me[i] - 5;
             var line = new fabric.Line([0+pad+label, h/2, w-pad-label, h/2], params);
+            var radians = (Math.PI * (angle) / 180);
+
+            var deltaV = (lineWidth/10 * score * -Math.sin(radians))
+            var deltaH = (lineWidth/10 * score * Math.cos(radians))
+
             var imageL = images[Math.floor(i*2+0)];
             var imageR = images[Math.floor(i*2+1)];
 
             imageL.left = label-image;
             imageR.left = w-label;
 
-            if (console && console.log ) {
-              console.log( imageL.left, imageR.left);
-            }
-
             var group = new fabric.Group([imageL, imageR, line], {
                 angle: angle,
                 selectable: false
             })
+
+            group.set('top',  h/2+deltaV)
+            group.set('left', w/2-deltaH)
             canvas.add(group)
         })
-
-
-
-
-
-
-
-
-
-
-
-
 
         $('#dl').click(function(e){
             window.open(canvas.toDataURL({format:'png'}))
